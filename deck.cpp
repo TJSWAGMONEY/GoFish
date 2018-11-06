@@ -60,7 +60,15 @@ int Deck::size() const {
 
 void Deck::shuffle() {
 
-    //
+    int randNum;
+    Card tempCard;
+
+    for(int i=0; i<(20*52); i++) {
+        randNum = rand() % 52;
+        tempCard = myCards[0];
+        myCards[0] = myCards[randNum];
+        myCards[randNum] = tempCard;
+    }
 
 }
 
