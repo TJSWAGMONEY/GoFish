@@ -46,7 +46,7 @@ Card Deck::dealCard() {
     }
     else {
         Card newCard = myCards[myIndex];
-        myIndex--;
+        myIndex++;
         return newCard;
     }
 
