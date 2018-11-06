@@ -49,7 +49,7 @@ class Card
     bool operator == (const Card& rhs) const;
     bool operator != (const Card& rhs) const;
     
-
+    ~Card();
     
   private:
 
