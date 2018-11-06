@@ -95,3 +95,6 @@ bool Card::operator != (const Card& rhs) const {
 
 }
 
+Card::~Card() {
+    //The destructor
+}
