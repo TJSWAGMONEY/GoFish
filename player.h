@@ -73,6 +73,8 @@ class Player
     //e.g. will return true if the player has a 7d and the parameter is 7c
     
     bool sameRankInHand(Card c) const; 
+  
+    ~Player();
     
     
   private:
