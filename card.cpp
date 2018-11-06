@@ -11,7 +11,7 @@ using namespace std;
 
 //default constructor
 Card::Card() {
-    
+    myRank = 1;
 }
 
 string toString() {
