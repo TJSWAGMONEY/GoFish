@@ -64,5 +64,8 @@ void Deck::shuffle() {
 
 }
 
+Deck::~Deck() {
+    //The destructor
+}
 
 
