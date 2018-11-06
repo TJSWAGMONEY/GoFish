@@ -9,6 +9,35 @@
 
 using namespace std;
 
+//Default constructor creates sorted pristine deck spades, diamonds, clubs, hearts
+Deck::Deck() {
+    myIndex = 0;
+    int idx;
+    //for each suit
+    for (int i = 0; i < 4; i++) {
+        //for each rank
+        for (int j = 1; j < 14; j++) {
+            idx = j - 1;
+            if (i == 0) {
+                Card addCard(j, Card::spades);
+                myCards[idx] = addCard;
+            }
+            if (i == 1) {
+                Card addCard(j, Card::diamonds);
+                myCards[13+idx] = addCard;
+            }
+            if (i == 2) {
+                Card addCard(j, Card::clubs);
+                myCards[26+idx] = addCard;
+            }
+            if (i == 3) {
+                Card addCard(j, Card::hearts);
+                myCards[39+idx] = addCard;
+            }
+        }
+    }
+}
+
 Card Deck::dealCard() {
 
     if(size() == 0) {
