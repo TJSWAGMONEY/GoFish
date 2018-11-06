@@ -60,14 +60,29 @@ int Deck::size() const {
 
 void Deck::shuffle() {
 
-    int randNum;
     Card tempCard;
+    int randNum
 
-    for(int i=0; i<(20*52); i++) {
-        randNum = rand() % 52;
-        tempCard = myCards[0];
-        myCards[0] = myCards[randNum];
-        myCards[randNum] = tempCard;
+    if(size() > 1) {
+        for(int i=0; i<(20*52); i++) {
+            randNum = 51 - ((rand()) % (51 - myIndex));
+            tempCard = myCards[myIndex];
+            myCards[myIndex] = myCards[randNum];
+            myCards[randNum] = tempCard;
+        }
+    }
+
+    //Our shuffle function swaps random cards a set number of times.
+    //If there are only two cards left, that effectively results in
+    //the same outcome every time, so we wrote this edge case to fix
+    //that problem and maintain the outcome of a randomly shuffled deck.
+    else if(size() == 2) {
+        randNum = (rand() % 10) + 1;
+        for(int i=0; i < randNum; i++) {
+            tempCard = myCards[50];
+            myCards[50] = myCards[51];
+            myCards[51] = tempCard;
+        }
     }
 
 }
