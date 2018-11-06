@@ -36,7 +36,7 @@ int Card::getRank() const {
 
 bool Card::sameSuitAs(const Card& c) const {
 
-    if(c.mySuit == this.mySuit) {
+    if(c.mySuit == this -> mySuit) {
         return true;
     }
     else {
@@ -73,9 +73,9 @@ string Card::suitString(Suit s) const {
 
 }
 
-bool operator == (const Card& rhs) const {
+bool Card::operator == (const Card& rhs) const {
 
-    if((rhs.mySuit == this.mySuit) && (rhs.myRank == this.myRank)) {
+    if((rhs.mySuit == this -> mySuit) && (rhs.myRank == this -> myRank)) {
         return true;
     }
     else {
@@ -84,9 +84,9 @@ bool operator == (const Card& rhs) const {
 
 }
 
-bool operator != (const Card& rhs) const {
+bool Card::operator != (const Card& rhs) const {
 
-    if((rhs.mySuit == this.mySuit) && (rhs.myRank == this.myRank)) {
+    if((rhs.mySuit == this -> mySuit) && (rhs.myRank == this -> myRank)) {
         return false;
     }
     else {
