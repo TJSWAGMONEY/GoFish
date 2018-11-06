@@ -61,7 +61,7 @@ int Deck::size() const {
 void Deck::shuffle() {
 
     Card tempCard;
-    int randNum
+    int randNum;
 
     if(size() > 1) {
         for(int i=0; i<(20*52); i++) {
