@@ -13,3 +13,10 @@ using namespace std;
 Card::Card() {
     
 }
+
+string toString() {
+
+    //
+
+}
+
