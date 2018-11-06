@@ -32,6 +32,8 @@ class Deck
     Card dealCard();   // get a card, after 52 are dealt, fail 
 
     int  size() const; // # cards left in the deck
+  
+    ~Deck();
 
   private:
 
