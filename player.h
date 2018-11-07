@@ -83,7 +83,6 @@ class Player
     vector <Card> myBook;
     
     string myName;     
-   
 };
 
 

@@ -31,13 +31,24 @@ bool Player::cardInHand(Card c) const {}
 
 Card Player::removeCardFromHand(Card c) {}
 
-string Player:: showHand() const {}
+string Player:: showHand() const {
+
+   string handString = "";
+   
+
+}
 
 string Player:: showBooks() const {}
 
-int Player::getHandSize() const {}
+int Player::getHandSize() const {
 
-int Player::getBookSize() const{}
+
+}
+
+int Player::getBookSize() const{
+
+
+}
 
 //bool Player::checkHandForPair(Card &c1, Card &c2);
 
