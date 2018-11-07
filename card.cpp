@@ -23,8 +23,8 @@ Card::Card(int rank, Suit s) {
 
 //method returns card as a string
 string Card::toString() const {
-    string rank = rankString(this->myRank);
-    string suit = suitString(this->mySuit);
+    string rank = rankString(myRank);
+    string suit = suitString(mySuit);
     return rank+suit;
 }
 
