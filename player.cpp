@@ -12,9 +12,14 @@ Player::Player() {
     myName = '\0';
 }
 
-void Player::addCard(Card c) {}
+void Player::addCard(Card c) {
+    myHand.push_back(c);
+}
 
-void Player::bookCards(Card c1, Card c2) {}
+void Player::bookCards(Card c1, Card c2) {
+    myBook.push_back(c1);
+    myBook.push_back(c2);
+}
 
 //bool Player::checkHandForBook(Card &c1, Card &c2) {}
 
