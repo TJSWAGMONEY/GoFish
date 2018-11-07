@@ -26,7 +26,7 @@ bool Player::checkForBook(Card *c1, Card *c2) {
         *c1 = myHand[i];
         for(int j = i+1; j < getHandSize(); j++) {
             *c2 = myHand[j];
-            if (c1 == c2)
+            if (c1->getRank() == c2->getRank())
                 return true;
         }
     }
@@ -44,7 +44,7 @@ Card Player::chooseCardFromHand() const {
 bool Player::cardInHand(Card c) const {
     //iterates through players hand
     for(int i = 0; i < myHand.size(); i++) {
-        if (myHand[i] == c)
+        if (myHand[i].getRank() == c.getRank())
             return true;
     }
     return false;
@@ -52,7 +52,7 @@ bool Player::cardInHand(Card c) const {
 
 Card Player::removeCardFromHand(Card c) {
     int idx = 0;
-    for(; myHand[idx] != c; idx++);
+    for(; myHand[idx].getRank() != c.getRank(); idx++);
 
     Card myCard = myHand[idx];
     myHand.erase(myHand.begin()+idx);
