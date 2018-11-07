@@ -47,10 +47,10 @@ int main() {
 
         if(p1turn) {
             if((p1.getHandSize()) > 0) {
-                temp1 = p1.chooseCardFromHand();
-                if(p2.cardInHand(temp1)) {
-                    while(p2.cardInHand(temp1)) {
-                        p1.addCard(p2.removeCardFromHand(temp1));
+                *(temp1) = p1.chooseCardFromHand();
+                if(p2.cardInHand(*temp1)) {
+                    while(p2.cardInHand(*temp1)) {
+                        p1.addCard(p2.removeCardFromHand(*temp1));
                     }
                 }
                 else {
@@ -78,10 +78,10 @@ int main() {
 
         else if(p2turn) {
             if((p2.getHandSize()) > 0) {
-                temp2 = p2.chooseCardFromHand();
-                if(p1.cardInHand(temp2)) {
-                    while(p1.cardInHand(temp2)) {
-                        p2.addCard(p1.removeCardFromHand(temp2));
+                *(temp2) = p2.chooseCardFromHand();
+                if(p1.cardInHand(*temp2)) {
+                    while(p1.cardInHand(*temp2)) {
+                        p2.addCard(p1.removeCardFromHand(*temp2));
                     }
                 }
                 else {
