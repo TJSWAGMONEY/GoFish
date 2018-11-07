@@ -21,14 +21,13 @@ void Player::bookCards(Card c1, Card c2) {
     myBook.push_back(c2);
 }
 
-bool Player::checkHandForBook(Card &c1, Card &c2) {
+bool Player::checkForBook(Card *c1, Card *c2) {
     for(int i = 0; i < getHandSize()-1; i++) {
-        c1 = myHand[i];
+        *c1 = myHand[i];
         for(int j = i+1; j < getHandSize(); j++) {
-            c2 = myHand[j];
-            if (c1 == c2) {
+            *c2 = myHand[j];
+            if (c1 == c2)
                 return true;
-            }
         }
     }
     return false;
