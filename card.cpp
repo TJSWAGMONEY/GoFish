@@ -95,6 +95,13 @@ bool Card::operator != (const Card& rhs) const {
 
 }
 
+//overrides cout, so that we can print the card object
+ostream& operator << (ostream& out, const Card &c)
+{
+    out << c.toString();
+    return out;
+}
+
 Card::~Card() {
     //The destructor
 }
