@@ -84,7 +84,6 @@ void Deck::shuffle() {
             myCards[51] = tempCard;
         }
     }
-
 }
 
 Deck::~Deck() {
