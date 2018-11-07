@@ -25,11 +25,30 @@ void Player::bookCards(Card c1, Card c2) {
 
 //bool Player::rankInHand(Card c) const {}
 
-Card Player::chooseCardFromHand() const {}
+Card Player::chooseCardFromHand() const {
+    int randIdx = rand() % getHandSize();
+    Card myCard = myHand[randIdx];
+    return myCard;
+}
 
-bool Player::cardInHand(Card c) const {}
+bool Player::cardInHand(Card c) const {
+    //iterates through players hand
+    for(int i = 0; i < myHand.size(); i++) {
+        if (myHand[i] == c)
+            return true;
+    }
+    return false;
+}
 
-Card Player::removeCardFromHand(Card c) {}
+Card Player::removeCardFromHand(Card c) {
+    int idx = 0;
+    for(; myHand[idx] != c; idx++);
+
+    Card myCard = myHand[idx];
+    myHand.erase(myHand.begin()+idx);
+
+    return myCard;
+}
 
 string Player:: showHand() const {
 
