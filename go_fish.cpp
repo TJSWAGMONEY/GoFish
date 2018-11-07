@@ -29,12 +29,15 @@ int main() {
     Card* temp1 = new Card;
     Card* temp2 = new Card;
 
-    while(p1.checkHandForBook(temp1, temp2)) {
+    bool p1turn = true;
+    bool p2turn = false;
+
+    while(p1.checkForBook(temp1, temp2)) {
         p1.bookCards(*temp1, *temp2);
         p1.removeCardFromHand(*temp1);
         p1.removeCardFromHand(*temp2);
     }
-    while(p2.checkHandForBook(temp1, temp2)) {
+    while(p2.checkForBook(temp1, temp2)) {
         p2.bookCards(*temp1, *temp2);
         p2.removeCardFromHand(*temp1);
         p2.removeCardFromHand(*temp2);
@@ -42,40 +45,79 @@ int main() {
 
     while(winCon != 26) {
 
-        //if p1turn
-        //   if p1 has at least 1 card
-        //      p1 chooses a card from hand
-        //      p1 asks p2 if they have a card of that number
-        //      if p2 has cards of that number
-        //         p1 gets the cards
-        //         and p2 loses the cards
-        //      else
-        //         p1 attempts to take a card from the deck
-        //      check p1 for books
-        //   else
-        //      p1 attempts to take a card from the deck
-        //   p1turn = false
-        //   p2turn = true
-        //else if p2turn
-        //   if p2 has at least 1 card
-        //      p2 chooses a card from hand
-        //      p2 asks p1 if they have a card of that number
-        //      if p1 has cards of that number
-        //         p2 gets the cards
-        //         and p1 loses the cards
-        //      else
-        //         p2 attempts to take a card from the deck
-        //      check p2 for books
-        //   else
-        //      p2 attempts to take a card from the deck
-        //   p2turn = false
-        //   p1turn = true
+        if(p1turn) {
+            if((p1.getHandSize()) > 0) {
+                temp1 = p1.chooseCardFromHand();
+                if(p2.cardInHand(temp1)) {
+                    while(p2.cardInHand(temp1)) {
+                        p1.addCard(p2.removeCardFromHand(temp1));
+                    }
+                }
+                else {
+                    if((d.size()) > 0) {
+                        p1.addCard(d.dealCard());
+                    }
+                }
+            }
+            else {
+                if((d.size()) > 0) {
+                    p1.addCard(d.dealCard());
+                }
+            }
+
+            while(p1.checkForBook(temp1, temp2)) {
+                p1.bookCards(*temp1, *temp2);
+                p1.removeCardFromHand(*temp1);
+                p1.removeCardFromHand(*temp2);
+            }
+
+            p1turn = false;
+            p2turn = true;
+
+        }
+
+        else if(p2turn) {
+            if((p2.getHandSize()) > 0) {
+                temp2 = p2.chooseCardFromHand();
+                if(p1.cardInHand(temp2)) {
+                    while(p1.cardInHand(temp2)) {
+                        p2.addCard(p1.removeCardFromHand(temp2));
+                    }
+                }
+                else {
+                    if((d.size()) > 0) {
+                        p2.addCard(d.dealCard());
+                    }
+                }
+
+            }
+            else {
+                if((d.size()) > 0) {
+                    p2.addCard(d.dealCard());
+                }
+            }
+
+            while(p2.checkForBook(temp1, temp2)) {
+                p2.bookCards(*temp1, *temp2);
+                p2.removeCardFromHand(*temp1);
+                p2.removeCardFromHand(*temp2);
+            }
+
+            p2turn = false;
+            p1turn = true;
+
+        }
 
         winCon = (p1.getBookSize() + p2.getBookSize()) / 2;
 
     }
 
-    //compare book sizes and announce the winner
+    if((p1.getBookSize()) > (p2.getBookSize())) {
+        //Declare p1 as the winner
+    }
+    else if((p2.getBookSize()) > (p1.getBookSize())) {
+        //Declare p2 as the winner
+    }
 
     delete temp1;
     delete temp2;
