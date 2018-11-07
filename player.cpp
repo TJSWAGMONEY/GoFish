@@ -34,15 +34,26 @@ Card Player::removeCardFromHand(Card c) {}
 string Player:: showHand() const {
 
     string handString = "";
+
     for(int i = 0; i < getHandSize(); i++) {
-
-        //
-
+        handString = handString + ((myHand[i]).toString()) + " ";
     }
+
+    return handString;
 
 }
 
-string Player:: showBooks() const {}
+string Player:: showBooks() const {
+
+    string bookString = "";
+
+    for(int i = 0; i < getBookSize(); i++) {
+        bookString = bookString + ((myBook[i]).toString()) + " ";
+    }
+
+    return bookString;
+
+}
 
 int Player::getHandSize() const {
 
