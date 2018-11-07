@@ -33,8 +33,12 @@ Card Player::removeCardFromHand(Card c) {}
 
 string Player:: showHand() const {
 
-   string handString = "";
-   
+    string handString = "";
+    for(int i = 0; i < getHandSize(); i++) {
+
+        //
+
+    }
 
 }
 
@@ -42,11 +46,13 @@ string Player:: showBooks() const {}
 
 int Player::getHandSize() const {
 
+    return myHand.size();
 
 }
 
 int Player::getBookSize() const{
 
+    return myBook.size();
 
 }
 
