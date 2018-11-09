@@ -1,3 +1,14 @@
+// player.cpp
+//
+// On our honor, this programming project is our own work and we have not
+// provided this code to any other student.
+//
+// Troy Jackson and James Lin
+//
+// taj777 and jl62356
+//
+// Section 5 digit ID: 16240
+
 #include <cstdlib>
 #include <iostream>
 #include <string>

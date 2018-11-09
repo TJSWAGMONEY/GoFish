@@ -1,24 +1,13 @@
-//File Name: card.h
+// card.h
 //
-//Written by Owen Astrachan and Roger Priebe
-// This class represents a playing card, i.e., "ace of spades"
-// a Card is constructed from a rank (int in range 1..13)
-// and a suit (Card::spades, Card::hearts, Card::diamonds,
-// Card::clubs)
+// On our honor, this programming project is our own work and we have not
+// provided this code to any other student.
 //
-// Cards should be created by a Deck (see deck.h), a Deck returns
-// good cards
-// The function toString() converts a card to a string, e.g., to print
+// Troy Jackson and James Lin
 //
-// Accessor functions include
+// taj777 and jl62356
 //
-// int GetRank()      -- returns 1, 2, ..., 13 for ace, two, ..., king
-//
-// bool SameSuitAs(c) -- returns true if same suit as Card c
-//
-// string suitString() -- returns "s", "h", "d" or "c"
-//
-// Note that the Ace is represented by 1 and the King by 13
+// Section 5 digit ID: 16240
 
 #ifndef _CARD_H
 #define _CARD_H

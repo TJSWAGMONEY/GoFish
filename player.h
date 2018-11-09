@@ -1,8 +1,13 @@
-// FILE:  player.h
-// written by Roger Priebe
-// 1/22/08 (revised 9/2/08)
-// This class represents a player in a card game that takes "tricks"
-// The "Books" represent a container for holding tricks
+// player.h
+//
+// On our honor, this programming project is our own work and we have not
+// provided this code to any other student.
+//
+// Troy Jackson and James Lin
+//
+// taj777 and jl62356
+//
+// Section 5 digit ID: 16240
 
 #ifndef _PLAYER_H
 #define _PLAYER_H

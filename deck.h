@@ -1,17 +1,13 @@
-// FILE: deck.h
-// written by Owen Astrachan and Roger Priebe
-// this class respresents a deck of cards
-// When a Deck is constructed, it contains 52 cards
-// in a "regular" order (aces, twos, threes, ... , kings)
+// deck.h
 //
-// Shuffling a deck makes it consist of 52 cards in a random order
+// On our honor, this programming project is our own work and we have not
+// provided this code to any other student.
 //
-// dealCard() returns a card from the deck and decreases the
-// number of cards in the deck (returned by size())
-// The idea is that after shuffling, calling dealCard() 52 times
-// returns each card in the deck after shuffling.
+// Troy Jackson and James Lin
 //
-// Calling shuffle again replenishes the deck with 52 cards.
+// taj777 and jl62356
+//
+// Section 5 digit ID: 16240
 
 #ifndef _DECK_H
 #define _DECK_H

@@ -1,3 +1,14 @@
+// card.cpp
+//
+// On our honor, this programming project is our own work and we have not
+// provided this code to any other student.
+//
+// Troy Jackson and James Lin
+//
+// taj777 and jl62356
+//
+// Section 5 digit ID: 16240
+
 #include <cstdlib>
 #include <iostream>
 #include <string>
@@ -28,12 +39,14 @@ string Card::toString() const {
     return rank+suit;
 }
 
+//returns the rank of the card as an integer
 int Card::getRank() const {
 
     return myRank;
 
 }
 
+//returns true if the cards are the same suit
 bool Card::sameSuitAs(const Card& c) const {
 
     if(c.mySuit == this -> mySuit) {
@@ -52,6 +65,7 @@ string Card::rankString(int r) const {
     return myCards[0][r];
 }
 
+//returns the string form of a card's suit
 string Card::suitString(Suit s) const {
 
     if(s == spades) {
@@ -73,6 +87,7 @@ string Card::suitString(Suit s) const {
 
 }
 
+//overloads the == operator
 bool Card::operator == (const Card& rhs) const {
 
     if((rhs.mySuit == this -> mySuit) && (rhs.myRank == this -> myRank)) {
@@ -84,6 +99,7 @@ bool Card::operator == (const Card& rhs) const {
 
 }
 
+//overloads the != operator
 bool Card::operator != (const Card& rhs) const {
 
     if((rhs.mySuit == this -> mySuit) && (rhs.myRank == this -> myRank)) {
