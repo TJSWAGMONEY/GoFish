@@ -49,6 +49,7 @@ Deck::Deck() {
     }
 }
 
+//adds card to player's hand from deck 
 Card Deck::dealCard() {
 
     if(size() == 0) {
@@ -63,12 +64,14 @@ Card Deck::dealCard() {
 
 }
 
+//finds the size of the deck
 int Deck::size() const {
 
     return(52-myIndex);
 
 }
 
+//shuffles the deck randomly
 void Deck::shuffle() {
 
     Card tempCard;
@@ -100,5 +103,4 @@ void Deck::shuffle() {
 Deck::~Deck() {
     //The destructor
 }
-
 
