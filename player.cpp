@@ -23,15 +23,18 @@ Player::Player() {
     myName = '\0';
 }
 
+//adds a card to player's hand
 void Player::addCard(Card c) {
     myHand.push_back(c);
 }
 
+//adds card to player's book 
 void Player::bookCards(Card c1, Card c2) {
     myBook.push_back(c1);
     myBook.push_back(c2);
 }
 
+//checks player's hand for a pair 
 bool Player::checkForBook(Card *c1, Card *c2) {
     for(int i = 0; i < getHandSize()-1; i++) {
         *c1 = myHand[i];
@@ -46,12 +49,14 @@ bool Player::checkForBook(Card *c1, Card *c2) {
 
 //bool Player::rankInHand(Card c) const {}
 
+//randomly selects a card from player's hand
 Card Player::chooseCardFromHand() const {
     int randIdx = rand() % getHandSize();
     Card myCard = myHand[randIdx];
     return myCard;
 }
 
+//checks if card with a specific rank is in player's hand
 bool Player::cardInHand(Card c) const {
     //iterates through players hand
     for(int i = 0; i < myHand.size(); i++) {
@@ -61,6 +66,7 @@ bool Player::cardInHand(Card c) const {
     return false;
 }
 
+//removes card from player's hand depending on rank
 Card Player::removeCardFromHand(Card c) {
     int idx = 0;
     for(; myHand[idx].getRank() != c.getRank(); idx++);
@@ -71,6 +77,7 @@ Card Player::removeCardFromHand(Card c) {
     return myCard;
 }
 
+//concatenates string of players cards in hand
 string Player:: showHand() const {
 
     string handString = "";
@@ -83,11 +90,12 @@ string Player:: showHand() const {
 
 }
 
+//concatenates string of players cards in book
 string Player:: showBooks() const {
 
     string bookString = "";
 
-    for(int i = 0; i < getBookSize(); i++) {
+    for(int i = 0; i < getBookSize() * 2; i++) {
         bookString = bookString + ((myBook[i]).toString()) + " ";
     }
 
@@ -95,15 +103,17 @@ string Player:: showBooks() const {
 
 }
 
+//returns the number of cards in player's hand
 int Player::getHandSize() const {
 
     return myHand.size();
 
 }
 
+//returns the number of cards in player's book
 int Player::getBookSize() const{
 
-    return myBook.size();
+    return (myBook.size() / 2);
 
 }
 
