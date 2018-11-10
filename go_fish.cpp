@@ -91,10 +91,10 @@ int main() {
 
                 if(p2.cardInHand(*temp1)) {
                     outFile << p2.getName() << " says - Yes. I have a " << temp1->getRank() << endl;
-                    while(p2.cardInHand(*temp1)) {//Removes the card from player 2's hand
-                                                  //and gives it to player 1
+                    while(p2.cardInHand(*temp1)) {//Removes the card from player 2's hand and gives it to player 1
                         p1.addCard(p2.removeCardFromHand(*temp1));
                     }
+                    outFile << p1.getName() << " books the " << temp1->getRank() << "..\n";
                 }
                 else {//Attempts to draw cards from the deck if player 2 does not have the card
                     if((d.size()) > 0) {
@@ -113,7 +113,6 @@ int main() {
             }
 
             //Checks player 1's hand for books
-            outFile << p1.getName() << " books the " << temp1->getRank() << "..\n";
             while(p1.checkForBook(temp1, temp2)) {
                 p1.bookCards(*temp1, *temp2);
                 p1.removeCardFromHand(*temp1);
@@ -133,10 +132,10 @@ int main() {
                 outFile << p2.getName() << " asks - Do you have a " << temp2->getRank() << endl;
                 if(p1.cardInHand(*temp2)) {
                     outFile << p1.getName() << " says - Yes. I have a " << temp2->getRank() << endl;
-                    while(p1.cardInHand(*temp2)) {//Removes the card from the other player
-                                                  //and gives it to player 2
+                    while(p1.cardInHand(*temp2)) {//Removes the card from the other player and gives it to player 2
                         p2.addCard(p1.removeCardFromHand(*temp2));
                     }
+                    outFile << p2.getName() << " books the " << temp2->getRank() << "..\n";
                 }
                 else {
                     if((d.size()) > 0) {//Attempts to draw cards from deck if the other player
@@ -157,7 +156,6 @@ int main() {
             }
 
             //Checks player 2's hand for books
-            outFile << p2.getName() << " books the " << temp2->getRank() << "..\n";
             while(p2.checkForBook(temp1, temp2)) {
                 p2.bookCards(*temp1, *temp2);
                 p2.removeCardFromHand(*temp1);
@@ -175,7 +173,7 @@ int main() {
         outFile << p2.getName() << "'s Hand: " << p2.showHand() << endl;
         outFile << p2.getName() << "'s Books: " << p2.showBooks() << "\n" << endl;
 
-        winCon = (p1.getBookSize() + p2.getBookSize()) / 2;//Checks if the game is over
+        winCon = p1.getBookSize() + p2.getBookSize();     //Checks if the game is over
 
     }
 
