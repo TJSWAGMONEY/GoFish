@@ -1,13 +1,24 @@
-// card.h
+//File Name: card.h
 //
-// On our honor, this programming project is our own work and we have not
-// provided this code to any other student.
+//Written by Owen Astrachan and Roger Priebe
+// This class represents a playing card, i.e., "ace of spades"
+// a Card is constructed from a rank (int in range 1..13)
+// and a suit (Card::spades, Card::hearts, Card::diamonds,
+// Card::clubs)
 //
-// Troy Jackson and James Lin
+// Cards should be created by a Deck (see deck.h), a Deck returns
+// good cards
+// The function toString() converts a card to a string, e.g., to print
 //
-// taj777 and jl62356
+// Accessor functions include
 //
-// Section 5 digit ID: 16240
+// int GetRank()      -- returns 1, 2, ..., 13 for ace, two, ..., king
+//
+// bool SameSuitAs(c) -- returns true if same suit as Card c
+//
+// string suitString() -- returns "s", "h", "d" or "c"
+//
+// Note that the Ace is represented by 1 and the King by 13
 
 #ifndef _CARD_H
 #define _CARD_H
@@ -18,11 +29,11 @@ using namespace std;
 
 class Card
 {
-  public:
+public:
 
 
     enum Suit {spades, hearts, diamonds, clubs};
-    
+
     Card();          // default, ace of spades
 
     Card(int rank, Suit s);
@@ -31,21 +42,21 @@ class Card
     bool sameSuitAs(const Card& c) const;  // true if suit same as c
     int  getRank()                 const;  // return rank, 1..13
     string suitString(Suit s)      const;  // return "s", "h",...
-    
-    string rankString(int r)       const;  // return "A", "2", ..."Q"  
-    
-    
+
+    string rankString(int r)       const;  // return "A", "2", ..."Q"
+
+
     bool operator == (const Card& rhs) const;
     bool operator != (const Card& rhs) const;
-    
-    ~Card();
-    
-  private:
+
+
+
+private:
 
     int myRank;
     Suit mySuit;
 
-    
+
 };
 
 ostream& operator << (ostream& out, const Card& c);
